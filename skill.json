@@ -1,0 +1,41 @@
+{
+  "name": "genpark-3d-parallelism-tensor-pipeline-topology-mapper-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - 3D parallelism topology mapper balancing tensor, pipeline, and sequence parallel communication buffers across GPU clusters.",
+  "author": "genpark",
+  "category": "distributed-training",
+  "tags": [
+    "megatron-lm",
+    "tensorrt-llm",
+    "3d-parallelism",
+    "tensor-parallel",
+    "pipeline-parallel"
+  ],
+  "inputs": {
+    "total_gpus": {
+      "type": "integer"
+    },
+    "model_param_billions": {
+      "type": "integer"
+    },
+    "target_latency_budget_ms": {
+      "type": "integer"
+    }
+  },
+  "outputs": {
+    "topology_plan_id": {
+      "type": "string"
+    },
+    "tensor_parallel_size": {
+      "type": "integer"
+    },
+    "pipeline_parallel_size": {
+      "type": "integer"
+    },
+    "nccl_topology_graph_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
